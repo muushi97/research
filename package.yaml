@@ -1,0 +1,62 @@
+name:                research
+version:             0.1.0.0
+github:              "muushi97/research"
+license:             BSD3
+author:              "muushi97"
+maintainer:          "example@example.com"
+copyright:           "2021 muushi97"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/muushi97/research#readme>
+
+dependencies:
+# base >= 4.7 && < 5
+- liquid-base
+- random >= 1.2
+- random-fu
+- vector
+- bytestring
+- tensorflow
+- tensorflow-core-ops
+- tensorflow-logging
+- tensorflow-opgen
+- tensorflow-ops
+- tensorflow-proto
+
+library:
+  source-dirs: src
+
+executables:
+  main-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - research
+    - liquid-base
+    - liquidhaskell >= 0.8.10
+
+tests:
+  main-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - research
+

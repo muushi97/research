@@ -1,0 +1,32 @@
+resolver: lts-17.2
+    #url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/17/12.yaml
+  
+
+packages:
+- .
+
+extra-deps:
+  - snappy-framing-0.1.2
+  - snappy-0.2.0.2
+  - text-format-0.3.2
+  - Diff-0.3.4
+  - liquid-base-4.14.1.0
+  - liquidhaskell-0.8.10.2
+  - liquid-ghc-prim-0.6.1
+  - git: https://github.com/tensorflow/haskell.git
+    commit: d088e30b80f1508281e400975bec9d14b431a22c
+    subdirs:
+    - tensorflow
+    - tensorflow-core-ops
+    - tensorflow-logging
+    - tensorflow-opgen
+    - tensorflow-ops
+    - tensorflow-proto
+    - tensorflow-records
+    - tensorflow-records-conduit
+
+extra-lib-dirs:
+- /usr/local/lib
+extra-include-dirs:
+- /usr/local/include
+
